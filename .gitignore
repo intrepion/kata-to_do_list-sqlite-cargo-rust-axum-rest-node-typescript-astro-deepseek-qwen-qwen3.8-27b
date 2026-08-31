@@ -1,0 +1,13 @@
+# Rust
+server/target/
+
+# Node
+web/node_modules/
+web/dist/
+
+# Runtime data (created by the server)
+data/
+
+# Misc
+.DS_Store
+*.log
