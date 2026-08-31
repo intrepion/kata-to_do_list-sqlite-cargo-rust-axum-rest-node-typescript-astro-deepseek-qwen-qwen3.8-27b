@@ -1,0 +1,30 @@
+[package]
+name = "todo-server"
+version = "0.1.0"
+edition = "2021"
+description = "Single-user To Do List REST API (Axum + SQLite)"
+
+[lib]
+name = "todo_server"
+path = "src/lib.rs"
+
+[[bin]]
+name = "todo-server"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+rusqlite = { version = "0.40", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt", "macros", "net", "signal", "time"] }
+thiserror = "2"
+tower-http = { version = "0.6", features = ["cors"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+reqwest = { version = "0.13", default-features = false, features = ["json"] }
+serde_json = "1"
+tower = { version = "0.5", features = ["util"] }
